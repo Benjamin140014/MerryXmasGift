@@ -1,3 +1,4 @@
+
 var lightswitch = document.getElementById("switch"),
     on = false;
 var Showimage = document.getElementById("image") ; 
@@ -7,7 +8,8 @@ lightswitch.addEventListener('click', toggleLights, false);
 
 TweenMax.set('.switchnob', {y: '+=90'})
 
-var tl = new TimelineMax({delay: .5});  
+var tl = new TimelineMax({delay: .5}); 
+var flag = true ;  
 
 function toggleLights(){
   if(on){
@@ -24,6 +26,10 @@ function toggleLights(){
     Showimage.style.visibility = "visible" ; 
     hearShape.style.visibility = "visible" ; 
     textC.style.visibility = "visible" ; 
+    if(flag) {
+      play() ;
+      flag = !flag ; 
+    }
   }
 }
 
@@ -47,3 +53,7 @@ var warp = document.getElementById("container"),	w = window.innerWidth , h = win
 
 function R(min,max) {return min+Math.random()*(max-min)};
 
+function play() {
+  var audio = new Audio('../audio/song.mp3');
+  audio.play();
+}
