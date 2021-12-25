@@ -2,6 +2,7 @@ var lightswitch = document.getElementById("switch"),
     on = false;
 var Showimage = document.getElementById("image") ; 
 var hearShape = document.getElementById("shape") ;
+var textC = document.getElementById("textC") ;
 lightswitch.addEventListener('click', toggleLights, false);
 
 TweenMax.set('.switchnob', {y: '+=90'})
@@ -15,18 +16,20 @@ function toggleLights(){
     TweenMax.to('.switchnob',.2, {y: '+=90'})
     Showimage.style.visibility = "hidden" ; 
     hearShape.style.visibility = "hidden" ; 
+    textC.style.visibility = "hidden" ;
   }else{
     TweenMax.to('.switchnob',.2, {y: '-=90'})
     TweenMax.staggerTo('.light', .5, {filter:'url(\'#glow\')', opacity: 1}, .04)
     on = true;
     Showimage.style.visibility = "visible" ; 
     hearShape.style.visibility = "visible" ; 
+    textC.style.visibility = "visible" ; 
   }
 }
 
 TweenLite.set(".anim-container",{perspective:600})
 
-var total = 250;
+var total = 300;
 var warp = document.getElementById("container"),	w = window.innerWidth , h = window.innerHeight;
  
  for (i=0; i<total; i++){ 
@@ -43,3 +46,4 @@ var warp = document.getElementById("container"),	w = window.innerWidth , h = win
  };
 
 function R(min,max) {return min+Math.random()*(max-min)};
+

@@ -52,14 +52,28 @@ h1 {
   position: relative;
   width: 200px;
   height: 200px;
+  transform: rotateZ(90deg);
+  animation: three 10s infinite;
+  animation-direction: alternate;
+  background-color: #439772;
+
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
-  background-color:aliceblue ;
+  background-color:pink ;
   visibility: hidden;
 }
+@keyframes three {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(90deg);
+  }
+}
+
 .heart-shape:before,
 .heart-shape:after{
   position: absolute;
@@ -70,7 +84,7 @@ h1 {
   -moz-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
-  background-color: aliceblue; 
+  background-color: pink; 
   
 }
 .heart-shape:before{
